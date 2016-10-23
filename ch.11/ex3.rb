@@ -1,0 +1,1 @@
+#Build a better playlist. After listening to playlists for a while, you might start to find that a purely random shuffle just doesn’t quite seem…mixed up enough. (Random and mixed up are not at all the same thing. Random is totally clumpy.) For example, here’s an excerpt from a playlist I made a while back of Thelonius Monk and Faith No More:
