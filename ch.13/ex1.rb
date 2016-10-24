@@ -1,1 +1,46 @@
-#“Orange tree. Make an OrangeTree class that has a height method that returns its height and a one_year_passes method that, when called, ages the tree one year. Each year the tree grows taller (however much you think an orange tree should grow in a year), and after some number of years (again, your call) the tree should die. For the first few years, it should not produce fruit, but after a while it should, and I guess that older trees produce more each year than younger trees…whatever you think makes the most sense. And, of course, you should be able to count_the_oranges (which returns the number of oranges on the tree) and pick_an_orange (which reduces the @orange_count by 1 and returns a string telling you how delicious the orange was, or else it just tells you that there are no more oranges to pick this year). Make sure any oranges you don’t pick one year fall off before the next year.”
+#Extend the Built-in Classes
+
+class Array
+  def shuffle
+    arr = self
+    shuf = []
+    while arr.length > 0
+      rand_index = rand(arr.length)
+      curr_index = 0
+      new_arr = []
+      arr.each do |item|
+        if curr_index == rand_index
+          shuf.push item
+        else
+          new_arr.push item
+        end
+        curr_index = curr_index + 1
+      end
+      arr = new_arr
+    end
+    shuf
+  end
+end
+class Integer
+  def factorial
+    if self <= 1
+      1
+    else
+      self * (self-1).factorial
+    end
+  end
+  def to_roman
+    roman = ''
+    roman = roman + 'M' * (self / 1000)
+    roman = roman + 'D' * (self % 1000/ 500)
+    roman = roman + 'C' * (self % 500 / 100)
+    roman = roman + 'L' * (self % 100 / 50)
+    roman = roman + 'X' * (self % 50 / 10)
+    roman = roman + 'V' * (self % 10 / 5)
+    roman = roman + 'I' * (self % 5 / 1)
+    roman
+  end
+end
+puts [1,2,3,4,5].shuffle
+puts 28.factorial
+puts 1985.to_roman
