@@ -1,1 +1,33 @@
-#Birthday helper! Write a program to read in names and birth dates from a text file. It should then ask you for a name. You type one in, and it tells you when that person’s next birthday will be (and, for the truly adventurous, how old they will be). The input file should look something like this:
+#Party like it’s roman_to_integer 'mcmxcix'! Come on, you knew it was coming, didn’t you? It’s the other half of your roman_numeral 1999 method. Make sure to reject strings that aren’t valid Roman numerals.
+
+def roman_to_integer roman
+  digit_vals = {'i' => 1,
+                'v' => 5,
+                'x' => 10,
+                'l' => 50,
+                'c' => 100,
+                'd' => 500,
+                'm' => 1000}
+total = 0
+prev = 0
+index = roman.length - 1
+  while index >= 0
+    c = roman[index].downcase
+    index = index - 1
+    val = digit_vals[c]
+    if !val
+      puts 'THis is not a valid roman numeral!'
+      return
+    end
+    if val < prev
+      val = val * -1
+    else
+      prev = val
+    end
+    total = total + val
+  end
+  total
+end
+
+puts(roman_to_integer('MCMLXXXV'))
+puts(roman_to_integer('MMXV'))
